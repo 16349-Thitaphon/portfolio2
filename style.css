@@ -1,243 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap');
+for(let i=0;i<25;i++){
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Prompt',sans-serif;
-}
+let heart=document.createElement("div");
 
-body{
-    background:linear-gradient(135deg,#FFE4EC,#FFD8EA,#FFF5FA);
-    color:#555;
-    overflow-x:hidden;
-}
+heart.innerHTML="💖";
 
-/* เมนู */
+heart.style.position="fixed";
+heart.style.left=Math.random()*100+"vw";
+heart.style.top="-50px";
+heart.style.fontSize=(20+Math.random()*20)+"px";
+heart.style.animation=fall ${5+Math.random()*5}s linear infinite;
 
-nav{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    gap:35px;
-    padding:18px;
-    background:rgba(255,255,255,.45);
-    backdrop-filter:blur(12px);
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:999;
-}
-
-nav a{
-    text-decoration:none;
-    color:#d63384;
-    font-size:18px;
-    font-weight:500;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#ff4f9b;
-    transform:translateY(-2px);
-}
-
-/* ทุกหน้า */
-
-.page,
-.hero{
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:120px 20px 40px;
-}
-
-/* กล่อง */
-
-.card{
-    width:850px;
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(15px);
-    border-radius:30px;
-    padding:40px;
-    box-shadow:0 10px 35px rgba(255,182,193,.35);
-    text-align:center;
-}
-
-/* รูป */
-
-.profile{
-    width:190px;
-    height:190px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid #ffb6c1;
-    margin-bottom:25px;
-}
-
-/* หัวข้อ */
-
-h1{
-    color:#ff69b4;
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-h2{
-    color:#d63384;
-    margin-bottom:15px;
-}
-
-p{
-    font-size:20px;
-    margin:12px 0;
-    line-height:1.8;
-}
-
-/* ปุ่ม */
-
-button{
-    margin-top:30px;
-    padding:13px 35px;
-    border:none;
-    border-radius:50px;
-    background:#ff8fab;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    background:#ff5c99;
-    transform:scale(1.05);
-}
-
-/* ตาราง */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-}
-
-table th,
-table td{
-    border:1px solid #ffc3d8;
-    padding:15px;
-}
-
-table th{
-    background:#ffd6e8;
-}
-
-/* รูปกิจกรรม/เกียรติบัตร */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin-top:30px;
-}
-
-.gallery img{
-    width:100%;
-    border-radius:18px;
-    transition:.3s;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-/* มือถือ */
-
-@media(max-width:768px){
-
-nav{
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-nav a{
-    font-size:16px;
-}
-
-.card{
-    width:95%;
-    padding:25px;
-}
-
-h1{
-    font-size:32px;
-}
-
-.profile{
-    width:150px;
-    height:150px;
-}
-
-p{
-    font-size:18px;
-}
-
-}
-/* โค้ด CSS เดิมของคุณ */
-
-@media(max-width:768px){
-
-    nav{
-        flex-wrap:wrap;
-    }
+document.body.appendChild(heart);
 
 }
 
-/* วางโค้ดซากุระตรงนี้ ↓↓↓ */
+const style=document.createElement("style");
 
-/* ===== Sakura ===== */
+style.innerHTML=`
+@keyframes fall{
+0%{transform:translateY(-50px);}
+100%{transform:translateY(110vh);}
+}
+`;
 
-.sakura-container{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 1;
+document.head.appendChild(style);
+ /* =====================
+       ดาวตก
+===================== */
+
+.star{
+
+    position:fixed;
+
+    top:-30px;
+
+    color:#ffffff;
+
+    opacity:.65;
+
+    text-shadow:
+    0 0 8px #ffffff;
+
+    animation:fall linear infinite;
+
+    z-index:1;
+
 }
 
-.sakura{
-    position: absolute;
-    top: -50px;
-    animation: fall linear forwards;
-}
 
 @keyframes fall{
 
-    0%{
-        transform: translateY(-50px) translateX(0px) rotate(0deg);
-        opacity: 1;
-    }
+    0%{
 
-    25%{
-        transform: translateY(25vh) translateX(-30px) rotate(90deg);
-    }
+        transform:
+        translateY(-50px)
+        rotate(0deg);
 
-    50%{
-        transform: translateY(50vh) translateX(30px) rotate(180deg);
-    }
+    }
 
-    75%{
-        transform: translateY(75vh) translateX(-20px) rotate(270deg);
-    }
 
-    100%{
-        transform: translateY(110vh) translateX(20px) rotate(360deg);
-        opacity: 0.8;
-    }
+    100%{
 
-}
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+      
+
+    }
+
+}   
