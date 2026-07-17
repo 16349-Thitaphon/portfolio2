@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 
 *{
     margin:0;
@@ -8,164 +8,59 @@
 }
 
 body{
-    background:linear-gradient(135deg,#FFE4EC,#FFD6E8,#FFF6FA);
-    overflow:hidden;
+    background:#ffe4ec;
+    min-height:100vh;
 }
 
-/* หน้าหลัก */
+nav{
+    position:sticky;
+    top:0;
+    background:white;
+    padding:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    z-index:1000;
+}
 
-.hero{
-    width:100%;
-    height:100vh;
+nav ul{
     display:flex;
     justify-content:center;
-    align-items:center;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#e85a92;
+    font-weight:600;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
 }
 
 .card{
-    width:420px;
-    background:rgba(255,255,255,.8);
-    backdrop-filter:blur(15px);
+    background:white;
     padding:40px;
-    border-radius:30px;
+    border-radius:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
     text-align:center;
-    box-shadow:0 10px 30px rgba(255,182,193,.4);
 }
 
 .profile{
-    width:180px;
-    height:180px;
+    width:200px;
+    height:200px;
     border-radius:50%;
     object-fit:cover;
-    border:6px solid #ffb6c1;
-    margin-bottom:20px;
+    border:5px solid #ffb6c1;
 }
 
 h1{
-    color:#ff69b4;
-    font-size:40px;
-}
-
-h2{
-    color:#d63384;
-    margin-top:15px;
+    color:#ff5f99;
+    margin-bottom:20px;
 }
 
 p{
-    margin-top:10px;
-    color:#666;
-}
-
-button{
-    margin-top:30px;
-    padding:12px 35px;
-    border:none;
-    border-radius:40px;
-    background:#ff8fab;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    background:#ff5c99;
-    transform:scale(1.05);
-}
-
-/* ดอกซากุระ */
-
-.sakura span{
-    position:fixed;
-    top:-10%;
-    font-size:35px;
-    animation:fall linear infinite;
-}
-
-.sakura span:nth-child(1){
-    left:5%;
-    animation-duration:8s;
-}
-
-.sakura span:nth-child(2){
-    left:15%;
-    animation-duration:12s;
-}
-
-.sakura span:nth-child(3){
-    left:25%;
-    animation-duration:10s;
-}
-
-.sakura span:nth-child(4){
-    left:35%;
-    animation-duration:14s;
-}
-
-.sakura span:nth-child(5){
-    left:45%;
-    animation-duration:9s;
-}
-
-.sakura span:nth-child(6){
-    left:55%;
-    animation-duration:13s;
-}
-
-.sakura span:nth-child(7){
-    left:65%;
-    animation-duration:11s;
-}
-
-.sakura span:nth-child(8){
-    left:75%;
-    animation-duration:15s;
-}
-
-.sakura span:nth-child(9){
-    left:85%;
-    animation-duration:9s;
-}
-
-.sakura span:nth-child(10){
-    left:95%;
-    animation-duration:12s;
-}
-
-.sakura span:nth-child(11){
-    left:50%;
-    animation-duration:8s;
-}
-
-.sakura span:nth-child(12){
-    left:70%;
-    animation-duration:10s;
-}
-
-@keyframes fall{
-
-    0%{
-        transform:translateY(-100px) rotate(0deg);
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-        opacity:.8;
-    }
-
-}
-.section{
-    width:80%;
-    max-width:900px;
-    margin:30px auto;
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.section h2{
-    color:#ff5b99;
-    margin-bottom:15px;
+    line-height:1.8;
 }
