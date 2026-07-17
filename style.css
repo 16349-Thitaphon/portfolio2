@@ -155,3 +155,17 @@ button:hover{
     }
 
 }
+.section{
+    width:80%;
+    max-width:900px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.section h2{
+    color:#ff5b99;
+    margin-bottom:15px;
+}
