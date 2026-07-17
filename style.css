@@ -1,79 +1,157 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pastel Sakura</title>
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap');
 
-<style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
 }
 
 body{
+    background:linear-gradient(135deg,#FFE4EC,#FFD6E8,#FFF6FA);
     overflow:hidden;
+}
+
+/* หน้าหลัก */
+
+.hero{
+    width:100%;
     height:100vh;
-    background:linear-gradient(to bottom,#FFD1DC,#FFEAF3);
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:sans-serif;
+}
+
+.card{
+    width:420px;
+    background:rgba(255,255,255,.8);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(255,182,193,.4);
+}
+
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #ffb6c1;
+    margin-bottom:20px;
 }
 
 h1{
-    color:#d85b8c;
-    font-size:48px;
-    text-shadow:2px 2px 8px rgba(255,255,255,.7);
-    z-index:10;
+    color:#ff69b4;
+    font-size:40px;
 }
 
-.sakura{
+h2{
+    color:#d63384;
+    margin-top:15px;
+}
+
+p{
+    margin-top:10px;
+    color:#666;
+}
+
+button{
+    margin-top:30px;
+    padding:12px 35px;
+    border:none;
+    border-radius:40px;
+    background:#ff8fab;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#ff5c99;
+    transform:scale(1.05);
+}
+
+/* ดอกซากุระ */
+
+.sakura span{
     position:fixed;
-    top:-30px;
-    font-size:24px;
-    animation:fall linear forwards;
-    user-select:none;
-    pointer-events:none;
+    top:-10%;
+    font-size:35px;
+    animation:fall linear infinite;
+}
+
+.sakura span:nth-child(1){
+    left:5%;
+    animation-duration:8s;
+}
+
+.sakura span:nth-child(2){
+    left:15%;
+    animation-duration:12s;
+}
+
+.sakura span:nth-child(3){
+    left:25%;
+    animation-duration:10s;
+}
+
+.sakura span:nth-child(4){
+    left:35%;
+    animation-duration:14s;
+}
+
+.sakura span:nth-child(5){
+    left:45%;
+    animation-duration:9s;
+}
+
+.sakura span:nth-child(6){
+    left:55%;
+    animation-duration:13s;
+}
+
+.sakura span:nth-child(7){
+    left:65%;
+    animation-duration:11s;
+}
+
+.sakura span:nth-child(8){
+    left:75%;
+    animation-duration:15s;
+}
+
+.sakura span:nth-child(9){
+    left:85%;
+    animation-duration:9s;
+}
+
+.sakura span:nth-child(10){
+    left:95%;
+    animation-duration:12s;
+}
+
+.sakura span:nth-child(11){
+    left:50%;
+    animation-duration:8s;
+}
+
+.sakura span:nth-child(12){
+    left:70%;
+    animation-duration:10s;
 }
 
 @keyframes fall{
+
     0%{
-        transform:translateY(-30px) translateX(0) rotate(0deg);
+        transform:translateY(-100px) rotate(0deg);
         opacity:1;
     }
+
     100%{
-        transform:translateY(110vh) translateX(120px) rotate(360deg);
-        opacity:0.8;
+        transform:translateY(110vh) rotate(360deg);
+        opacity:.8;
     }
+
 }
-</style>
-</head>
-
-<body>
-
-<h1>🌸 Pastel Sakura 🌸</h1>
-
-<script>
-function createSakura(){
-    const sakura=document.createElement("div");
-    sakura.classList.add("sakura");
-    sakura.innerHTML="🌸";
-
-    sakura.style.left=Math.random()*window.innerWidth+"px";
-    sakura.style.animationDuration=(5+Math.random()*5)+"s";
-    sakura.style.fontSize=(18+Math.random()*20)+"px";
-
-    document.body.appendChild(sakura);
-
-    setTimeout(()=>{
-        sakura.remove();
-    },10000);
-}
-
-setInterval(createSakura,200);
-</script>
-
-</body>
-</html>
