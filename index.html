@@ -1,54 +1,181 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - ฐิตาพร ศรีภิรมย์</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+}
+
+body{
+    background:#ffe4ec;
+    overflow-x:hidden;
+}
+
+/* เมนู */
+nav{
+    width:100%;
+    background:white;
+    padding:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#d45b88;
+    font-weight:500;
+}
+
+/* หน้าหลัก */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:80px;
+}
+
+.card{
+    width:800px;
+    max-width:90%;
+    background:white;
+    border-radius:30px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    position:relative;
+}
+
+/* รูปโปรไฟล์ */
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:6px solid #ffb6c1;
+    object-fit:cover;
+}
+
+h1{
+    color:#ff5b99;
+    margin-top:20px;
+    font-size:55px;
+}
+
+.name{
+    font-size:28px;
+    color:#d74f82;
+    font-weight:600;
+    margin-top:10px;
+}
+
+.desc{
+    margin-top:10px;
+    color:#555;
+    font-size:20px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 40px;
+    background:#ff8fb1;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ff5b99;
+}
+
+/* ดอกไม้ */
+.flower{
+    position:fixed;
+    color:#ff69b4;
+    animation:fall linear infinite;
+    z-index:-1;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
+</style>
 </head>
-
 <body>
 
-    <!-- ดอกซากุระ -->
-    <div class="sakura">
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
+<nav>
+    <ul>
+        <li><a href="#">🏠 หน้าแรก</a></li>
+        <li><a href="#">👤 ประวัติส่วนตัว</a></li>
+        <li><a href="#">🎓 ประวัติการศึกษา</a></li>
+        <li><a href="#">🏆 เกียรติบัตร</a></li>
+        <li><a href="#">📝 กิจกรรม</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="card">
+
+    
+        <img src="IMG_7605.jpeg" alt="Profile" class="profile">
+
+        <h1>PORTFOLIO</h1>
+
+        <p class="name">นางสาวฐิตาพร ศรีภิรมย์</p>
+
+        <p class="desc">แฟ้มสะสมผลงาน</p>
+
+        <a href="#" class="btn">เข้าสู่ Portfolio</a>
+
     </div>
+</section>
 
-    <section class="hero">
+<script>
 
-        <div class="card">
+// สร้างดอกไม้ลอย
+for(let i=0;i<40;i++){
 
-            <img src="images/profile.jpg" class="profile">
+    let flower=document.createElement("div");
 
-            <h1>PORTFOLIO</h1>
+    flower.classList.add("flower");
 
-            <h2>นางสาวฐิตาพร ศรีภิรมย์</h2>
+    flower.innerHTML="🌸";
 
-            <p>แฟ้มสะสมผลงาน</p>
+    flower.style.left=Math.random()*100+"vw";
 
-            <a href="profile.html">
-                <button>เข้าสู่ Portfolio</button>
-            </a>
+    flower.style.fontSize=(15+Math.random()*25)+"px";
 
-        </div>
+    flower.style.animationDuration=(5+Math.random()*10)+"s";
 
-    </section>
+    flower.style.animationDelay=Math.random()*5+"s";
+
+    document.body.appendChild(flower);
+}
+</script>
 
 </body>
 </html>
