@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pastel Sakura</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    background:linear-gradient(to bottom,#FFD1DC,#FFEAF3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:sans-serif;
+}
+
+h1{
+    color:#d85b8c;
+    font-size:48px;
+    text-shadow:2px 2px 8px rgba(255,255,255,.7);
+    z-index:10;
+}
+
+.sakura{
+    position:fixed;
+    top:-30px;
+    font-size:24px;
+    animation:fall linear forwards;
+    user-select:none;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-30px) translateX(0) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) translateX(120px) rotate(360deg);
+        opacity:0.8;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌸 Pastel Sakura 🌸</h1>
+
+<script>
+function createSakura(){
+    const sakura=document.createElement("div");
+    sakura.classList.add("sakura");
+    sakura.innerHTML="🌸";
+
+    sakura.style.left=Math.random()*window.innerWidth+"px";
+    sakura.style.animationDuration=(5+Math.random()*5)+"s";
+    sakura.style.fontSize=(18+Math.random()*20)+"px";
+
+    document.body.appendChild(sakura);
+
+    setTimeout(()=>{
+        sakura.remove();
+    },10000);
+}
+
+setInterval(createSakura,200);
+</script>
+
+</body>
+</html>
