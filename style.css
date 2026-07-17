@@ -1,0 +1,45 @@
+/* =====================
+       ดาวตก
+===================== */
+
+.star{
+
+    position:fixed;
+
+    top:-30px;
+
+    color:#ffffff;
+
+    opacity:.65;
+
+    text-shadow:
+    0 0 8px #ffffff;
+
+    animation:fall linear infinite;
+
+    z-index:1;
+
+}
+
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+
+    }
+
+
+    100%{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+      
+
+    }
+
+}
